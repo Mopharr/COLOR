@@ -1,3 +1,14 @@
+/*-----------Fonts-------------*/
+@font-face{
+    src: url(/fonts/proxima_ssv/Proxima\ Nova\ Bold.otf);
+    font-family: Proxima-bold;
+    src: url(/fonts/proxima_ssv/ProximaNova-Regular.otf);
+    font-family: Proxima-regular;
+    src: url(/fonts/proxima_ssv/Proxima\ Nova\ Extrabold.otf);
+    font-family: Proxima-extrabold;
+    src: url(/fonts/proxima_ssv/Proxima\ Nova\ Thin.otf);
+    font-family: Proxima-thin;
+}
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,11 +18,10 @@
 }
 .navbar{
     background: #131313;
-    height: 80px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -19,7 +29,7 @@
 .navbar-container{
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    height: 60px;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
@@ -38,7 +48,9 @@
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
+    font-family: Proxima-bold;
+    font-size: 35px;
+    font-weight: bolder;
 }
 .navbar-menu{
     display: flex;
@@ -47,14 +59,18 @@
 
 }
 .navbar-item{
-    height: 80px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight:  500;
+    font-size: 18px;
 }
 .navbar-links{
-    color: #fff;
+    font-family: Proxima-bold;
+    color: #ffffff;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 125px;
+    width: 150px;
     text-decoration: none;
     display: flex;
     transition: all 0.5s ease ;
