@@ -10,103 +10,159 @@
     font-family: Proxima-thin;
 }
 *{
-    box-sizing: border-box;
-    background-position: center;
-    margin: 0 0;
     padding: 0;
-    font-family: sans-serif;
-    scroll-behavior: smooth;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
 }
-.navbar{
-    background: #121212;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 999;
+
+body{
+    font-family: montserrat;
 }
-.navbar-container{
-    display: flex;
-    justify-content: space-between;
-    height: 70px;
-    z-index: 1;
+/*---------Navigation----------*/
+nav{
+    height: 80px;
     width: 100%;
-    max-width: auto;
-    
+    background: #121212;
 }
-#navbar_logo{
+
+label.logo{
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    padding: 0 100px;
+    line-height: 80px;
     background-color: #ff8177;
     background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100% );
-    background-size: 100%;
     -webkit-background-clip: text;
     background-clip: text;
-    -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    display: flex;
-    align-items: center;
     cursor: pointer;
-    text-decoration: none;
-    font-family: Proxima-bold;
-    font-size: 35px;
-    font-weight: bolder;
-    margin-left: 50px;
 }
-.navbar-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin-right: 80px;
+
+nav ul{
+    float: right;
+    margin-right: 40px;
 }
-.navbar-item{
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-weight:  500;
+
+nav li{
+    display: inline-block;
+    margin: 0 10px;
+    line-height: 80px;
+}
+
+nav a {
+    color: white;
     font-size: 18px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    padding: 7px 10px;
+    border-radius: 3px;
 }
-.navbar-links{
-    font-family: Proxima-bold;
-    color: #ffffff;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    margin-right: 30px;
-    text-decoration: none;
-    display: flex;
-    transition: all 0.5s ease ;
+
+a.active, a:hover{
+    color: #ee0979;
+    transition: .5s;
 }
-.navbar-links:hover{
-    color: #9518fc;
-    text-decoration: none;
-    transition: all 0.3s ease ;
-}
-.navbar-btn{
-    display: flex;
+nav button{
+    float: right;
     justify-content:center;
     align-items: center;
     text-decoration: none;
     width: 100px;
     height: 40px;
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 25px;
     margin-left: 30px;
+    margin-right: 80px;
     color: #ffffff;
-    font-family: Proxima-bold;
+    font-family: montserrat;
+    font-size: 14px;
     font-weight: 500;
     border: none;
     outline: none;
     border-radius: 4px;
-    background: #833ab4;
     background: -webkit-linear-gradient(to right #ff6a00,#ee0979);
     background: linear-gradient(to right, #ff6a00,#ee0979);
     transition: all 0.3s ease;
 }
-.navbar-btn:hover{
+nav button:hover{
     text-decoration: none;
     background: -webkit-linear-gradient(to right #8f0eff,#da22ff );
     background: linear-gradient(to right, #8f0eff,#da22ff);
+}
+
+nav #icon{
+    color: white;
+    font-size: 25px;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width: 1048px){
+    label.logo{
+        font-size: 32px;
+        padding-left: 60px;
+    }
+    nav ul{
+        margin-right: 20px;
+    }
+    nav a{
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 909px){
+    nav #icon{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #222529;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav a{
+        font-size: 20px;
+    }
+    a.active, a:hover{
+        border: none;
+        color: #ee0979;
+    }
+    nav ul.show{
+            left: 0 ;
+    }
+    nav button{
+        display: block;
+        margin: 0 240px;
+        background: -webkit-linear-gradient(to right #ff6a00,#ee0979);
+        background: linear-gradient(to right, #ff6a00,#ee0979);
+        transition: all 0.3s ease;
+        align-items: center;
+
+    }
+    nav button:hover{
+        text-decoration: none;
+    background: -webkit-linear-gradient(to right #8f0eff,#da22ff );
+    background: linear-gradient(to right, #8f0eff,#da22ff);
+    }
+    .btn-hero{
+        justify-items: center;
+        margin-top: 30px;
+    }
 }
 
 /* Header*/
@@ -158,4 +214,25 @@
   border-bottom: 4px solid rgb(132, 0, 255);
 }
 
-
+.btn-hero{
+    display: inline-block;
+    justify-content:center;
+    align-items: center;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-left: 30px;
+    margin-right: 80px;
+    color: #ffffff;
+    font-family: montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: -webkit-linear-gradient(to right #ff6a00,#ee0979);
+    background: linear-gradient(to right, #ff6a00,#ee0979);
+    transition: all 0.3s ease;
+}
