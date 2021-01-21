@@ -109,13 +109,18 @@ nav #icon{
         padding-left: 60px;
     }
     nav ul{
-        margin-right: 20px;
+        margin-right: 0px;
+        margin-top: -80px;
     }
     nav a{
         font-size: 17px;
     }
 }
-
+@media(max-width: 1128px){
+ nav ul{
+     margin-top: -80px;
+ }
+}
 @media(max-width: 909px){
     nav #icon{
         display: block;
