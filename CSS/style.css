@@ -122,12 +122,14 @@ nav #icon{
  }
 }
 @media(max-width: 909px){
+    
     nav #icon{
         display: block;
     }
     nav ul{
         position: fixed;
         width: 100%;
+        margin-top: 0px;
         height: 100vh;
         background: #222529;
         top: 80px;
@@ -152,11 +154,10 @@ nav #icon{
     }
     nav button{
         display: block;
-        margin: 0 240px;
+        margin: 0 290px;
         background: -webkit-linear-gradient(to right #ff6a00,#ee0979);
         background: linear-gradient(to right, #ff6a00,#ee0979);
         transition: all 0.3s ease;
-        align-items: center;
 
     }
     nav button:hover{
