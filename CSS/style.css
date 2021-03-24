@@ -18,6 +18,7 @@
 }
 
 body{
+    width: 100%;
     font-family: montserrat;
 }
 /*---------Navigation----------*/
@@ -64,10 +65,12 @@ nav a {
 
 a.active, a:hover{
     color: #ee0979;
-    transition: .5s;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
-.btn{
-    float: right;
+
+.navbar button{
+    color: #fff;
     justify-content:center;
     align-items: center;
     text-decoration: none;
@@ -76,8 +79,7 @@ a.active, a:hover{
     margin-top: 20px;
     margin-bottom: 25px;
     margin-left: 30px;
-    margin-right: 80px;
-    color: #ffffff;
+    margin-right: 90px;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -87,13 +89,31 @@ a.active, a:hover{
     background: -webkit-linear-gradient(to right #ff6a00,#ee0979);
     background: linear-gradient(to right, #ff6a00,#ee0979);
     transition: all 0.3s ease;
+    position: relative;
 }
-nav button:hover{
-    text-decoration: none;
+.navbar button::after{
+    /* text-decoration: none;
     background: -webkit-linear-gradient(to right #8f0eff,#da22ff );
-    background: linear-gradient(to right, #8f0eff,#da22ff);
+    background: linear-gradient(to right, #8f0eff,#da22ff); */
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #fc00ff;
+    transition: all 0.35s;
+    border-radius: 4px;
 }
-
+.navbar button a{
+    position: relative;
+    z-index: 2;
+    color: #fff;
+     text-decoration: none;
+}
+.navbar button:hover::after{
+    width: 100%;
+}
 nav #icon{
     color: white;
     font-size: 25px;
@@ -104,25 +124,43 @@ nav #icon{
     display: none;
 }
 
-@media(max-width: 1048px){
+@media(max-width: 2000px){
     label.logo{
         font-size: 32px;
         padding-left: 60px;
     }
     nav ul{
-        margin-right: 0px;
-        margin-top: -80px;
+        
     }
     nav a{
         font-size: 17px;
     }
 }
-@media(max-width: 1128px){
+@media(max-width: 1147px){
+    nav ul{
+        margin-left: -80px;
+        margin-top: -10px;
+    }
+}
+@media(max-width: 1139px){
  nav ul{
-     margin-top: -80px;
+     margin-left: -80px;
  }
 }
-@media(max-width: 909px){
+@media(max-width: 1122px){
+    nav ul{
+        margin-right: -80px;
+        margin-top: 10px;
+
+    }
+   }
+@media(max-width: 1024px){
+    nav ul{
+        margin-right: -80px;
+        margin-top: 10px;
+    }
+   }
+@media(max-width: 999px){
     
     nav #icon{
         display: block;
@@ -265,24 +303,17 @@ nav #icon{
 /*About*/
 .main{
     background: #131313;
-    padding: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    padding: 10px 0px;
     align-items: center;
-    margin: 0 auto;
-    height: 90%;
-    width: 100%;
-    
 }
 .main_container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    margin: 0 auto;
-    height: 90%;
-    width: 100%;
-
-    padding: 0px 50px;
+  grid-template-columns: 1fr 1fr;
+  height: 90%;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
 }
 .main_content{
     color: #fff;
@@ -296,10 +327,9 @@ nav #icon{
     background-size: 100%;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-transform: uppercase;
     margin-bottom: 30px;
-    margin-right: 10px;
 }
 .main_content h2{
     font-size: 80px;
@@ -312,7 +342,6 @@ nav #icon{
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    word-break: normal;
 }
 .main_content p{
     font-size: 25px;
@@ -322,8 +351,8 @@ nav #icon{
 }
 .btn-content{
    text-decoration: none;
-    padding: 1px 80px;
-    margin-top: 20px;
+    padding: 20px 80px;
+    margin-top: 30px;
     margin-right: 500px;
     color: #ffffff;
     font-size: 18px;
@@ -331,8 +360,8 @@ nav #icon{
     border: none;
     outline: none;
     border-radius: 4px;
-    background: -webkit-linear-gradient(to right #ff6a00,#ee0979);
-    background: linear-gradient(to right, #ff6a00,#ee0979);
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
     transition: all 0.3s ease;
     position: relative;
     cursor: pointer;
@@ -363,7 +392,33 @@ nav #icon{
     color: #fff;
 }
 
-
+.main_img_cont{
+    margin: 10px;
+    height: 400px;
+    width: 400px;
+    border-radius: 4px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+    margin-bottom: 50px;
+}
+.fa-layer-group, .fa-user{
+    font-size: 14rem;
+    margin: auto 75px;
+}
+@media(max-width: 1048px){
+    .fa-layer-group{
+        margin-bottom: 70px;
+    }
+}
+@media(max-width: 999px){
+    .main_img_cont{
+        width: 400px;
+    } 
+}
 
 
 
